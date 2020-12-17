@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_paper_wallet/pages/btcWallet.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Homepage extends StatefulWidget {
@@ -58,18 +59,23 @@ class _HomepageState extends State<Homepage> {
           15.heightBox,
           Divider(),
           25.heightBox,
-          VxBox(
-            child: HStack([
-              VxBox(child: Image.asset('assets/btc.png')).roundedSM.width(50).orange500.make(),
-              15.widthBox,
-              "Generate BTC paper wallet".text.size(18).bold.make()
-            ],alignment: MainAxisAlignment.start,axisSize: MainAxisSize.max,).p12()
-          )
-              .height(70)
-              .shadow
-              .rounded
-              .color(Color(0xff262A34))
-              .makeCentered(),
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder:(context)=>BtcWallet()));
+            },
+            child: VxBox(
+              child: HStack([
+                VxBox(child: Image.asset('assets/btc.png')).roundedSM.width(50).orange500.make(),
+                15.widthBox,
+                "Generate BTC paper wallet".text.size(18).bold.make()
+              ],alignment: MainAxisAlignment.start,axisSize: MainAxisSize.max,).p12()
+            )
+                .height(70)
+                .shadow
+                .rounded
+                .color(Color(0xff262A34))
+                .makeCentered(),
+          ),
           30.heightBox,
           VxBox(
             child: HStack([
