@@ -30,6 +30,8 @@ dependencies:
   bitcoin_flutter: ^2.0.1
   velocity_x:
   pretty_qr_code: ^1.0.1
+  clipboard: ^0.1.2+8
+
 
 dev_dependencies:
   flutter_test:
