@@ -1,4 +1,4 @@
-import 'dart:math';
+/* import 'dart:math';
 import "package:convert/convert.dart" show hex;
 import 'package:bitcoin_flutter/bitcoin_flutter.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:qr/qr.dart';
 import 'package:clipboard/clipboard.dart';
-import "package:ethereum_address/ethereum_address.dart";
+import 'package:web3dart/credentials.dart';
 
 class EthWallet extends StatefulWidget {
   @override
@@ -16,12 +16,12 @@ class EthWallet extends StatefulWidget {
 class _EthWalletState extends State<EthWallet> {
   String _address;
   String _privKey;
-  String _pubKey;
   void generateBtcWallet() async{
     var rng = new Random.secure();
-    _address =  ;
-    _privKey = ;
-    _pubKey = wallet.pubKey;
+    Credentials random = EthPrivateKey.createRandom(rng);
+    var add = await random.extractAddress();
+    _address =  add.hex;
+    _privKey = random.;
     setState(() {});
   }
 
@@ -52,7 +52,7 @@ class _EthWalletState extends State<EthWallet> {
           (context.screenPadding.top.heightBox),
           Row(
             children: [
-              "BTC Paper Wallet".text.size(25).bold.make().objectTopLeft(),
+              "ETH Paper Wallet".text.size(25).bold.make().objectTopLeft(),
               InkWell(
                 onTap: () {
                   generateBtcWallet();
@@ -156,7 +156,7 @@ class _EthWalletState extends State<EthWallet> {
                   border: Border.all(color: Colors.redAccent, width: 1.5)))
               .makeCentered(),
           20.heightBox,
-          VxBox(
+/*           VxBox(
             child: VStack([
               VxBox(
                       child: Row(
@@ -196,7 +196,7 @@ class _EthWalletState extends State<EthWallet> {
               .width(double.infinity)
               .withDecoration(BoxDecoration(
                   border: Border.all(color: Vx.blue500, width: 1.5)))
-              .makeCentered(),
+              .makeCentered(), */
           10.heightBox,
           ExpansionTile(
             childrenPadding: EdgeInsets.all(8),
@@ -277,4 +277,4 @@ class _EthWalletState extends State<EthWallet> {
       ).p16().scrollVertical(),
     );
   }
-}
+} */

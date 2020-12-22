@@ -31,7 +31,8 @@ dependencies:
   velocity_x:
   pretty_qr_code: ^1.0.1
   clipboard: ^0.1.2+8
-  ethereum_address: ^1.0.1
+  web3dart: ^1.2.3
+  flutter_barcode_scanner: ^1.0.1
 
 
 dev_dependencies:
