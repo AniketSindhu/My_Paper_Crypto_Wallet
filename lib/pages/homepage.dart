@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
+import 'package:flutter_tooltip/flutter_tooltip.dart';
 import 'package:my_paper_wallet/api/api.dart';
 import 'package:my_paper_wallet/pages/balance.dart';
 import 'package:my_paper_wallet/pages/btcWallet.dart';
@@ -13,6 +14,8 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  static GlobalKey key1 = GlobalKey();
+  List<TooltipModel> tip = [TooltipModel(key: key1, child: "This Bitcoin address generator guides you to easily print your secure bitcoin paper wallet. Once the funds are transferred to your paper wallet, your bitcoin and your private information are stored offline and protect against hackers and other threats.\nYou just have to keep your wallet safe as you would for money.".text.size(18).make())];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +25,11 @@ class _HomepageState extends State<Homepage> {
           Row(
             children: [
               "My Paper Wallet".text.bold.size(26).fontFamily('Poppins').make(),
-              Icon(Icons.help_outline,color: Colors.lightBlue,size: 32,)
+              InkWell(
+                onTap: (){
+                  FlutterTooltip.showTips(tip, context);
+                },
+                child: Icon(Icons.help_outline,color: Colors.lightBlue,size: 32,key: key1,))
             ],mainAxisAlignment: MainAxisAlignment.spaceBetween,
           ),
           50.heightBox,

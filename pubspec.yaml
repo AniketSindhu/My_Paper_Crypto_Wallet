@@ -33,6 +33,8 @@ dependencies:
   clipboard: ^0.1.2+8
   web3dart: ^1.2.3
   flutter_barcode_scanner: ^1.0.1
+  url_launcher:
+  flutter_tooltip: ^0.1.0
 
 
 dev_dependencies:

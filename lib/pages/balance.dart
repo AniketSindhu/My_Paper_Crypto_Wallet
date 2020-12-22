@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:qr/qr.dart';
 
@@ -92,7 +93,7 @@ class _BalanceState extends State<Balance> {
         ),
         InkWell(
           onTap: (){
-            /* launch(); */
+            launch('https://www.blockchain.com/btc/address/${widget.address}');
           },
           child: "Get More Info".text.medium.underline.size(18).make()).objectBottomCenter().expand()
       ]).pSymmetric(v: 32, h: context.screenWidth * 0.055),
