@@ -90,6 +90,11 @@ class _BalanceState extends State<Balance> {
         Divider(
           thickness: 1.5,
         ),
+        InkWell(
+          onTap: (){
+            /* launch(); */
+          },
+          child: "Get More Info".text.medium.underline.size(18).make()).objectBottomCenter().expand()
       ]).pSymmetric(v: 32, h: context.screenWidth * 0.055),
     );
   }

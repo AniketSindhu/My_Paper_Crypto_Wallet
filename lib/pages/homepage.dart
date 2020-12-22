@@ -3,6 +3,7 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:my_paper_wallet/api/api.dart';
 import 'package:my_paper_wallet/pages/balance.dart';
 import 'package:my_paper_wallet/pages/btcWallet.dart';
+import 'package:my_paper_wallet/pages/choose.dart';
 import 'package:my_paper_wallet/pages/ethWallet.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -27,7 +28,7 @@ class _HomepageState extends State<Homepage> {
           50.heightBox,
           InkWell(
               onTap: () async{
-                String qr = await FlutterBarcodeScanner.scanBarcode(
+/*                 String qr = await FlutterBarcodeScanner.scanBarcode(
                   '#ff171821', 
                   'Cancel', 
                   true,  
@@ -45,7 +46,8 @@ class _HomepageState extends State<Homepage> {
                         showTime: 4000,
                         textColor: Colors.white);
                   }
-                }
+                } */
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>Choose()));
               },
               child: VxBox(
                     child: "Check BTC balance"

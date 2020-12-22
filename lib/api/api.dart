@@ -7,7 +7,7 @@ Future<dynamic> getBalance(String address) async{
       Map<String,dynamic> res = Map();
       final jsonRes = json.decode(response.body);
       res["result"] = true;
-      res["balance"] = jsonRes["address"]["total"]["spent"];
+      res["balance"] = jsonRes["address"]["total"]["balance"];
       res["received"] = jsonRes["address"]["total"]["received"];
       res["spent"] = jsonRes["address"]["total"]["spent"];
       res["transaction_count"] = jsonRes["address"]["total"]["transaction_count"];
