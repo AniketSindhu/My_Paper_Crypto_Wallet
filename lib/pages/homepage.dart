@@ -6,6 +6,8 @@ import 'package:my_paper_wallet/pages/balance.dart';
 import 'package:my_paper_wallet/pages/btcWallet.dart';
 import 'package:my_paper_wallet/pages/choose.dart';
 import 'package:my_paper_wallet/pages/ethWallet.dart';
+import 'package:my_paper_wallet/pages/moreInfo.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Homepage extends StatefulWidget {
@@ -131,7 +133,13 @@ class _HomepageState extends State<Homepage> {
           ),
           25.heightBox, */
           Divider(),
-          "Learn More".text.size(16).underline.make().objectBottomCenter().expand()
+          InkWell(
+            child: "Learn More".text.size(16).underline.make(),
+            onTap: (){
+              /* Navigator.push(context, MaterialPageRoute(builder: (context)=>MoreInfo())); */
+              launch('https://www.investopedia.com/terms/p/paper-wallet.asp');
+            },
+          ).objectBottomCenter().expand()
         ]).pSymmetric(v: 32, h: context.screenWidth * 0.055));
   }
 }
